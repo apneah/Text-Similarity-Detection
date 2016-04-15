@@ -1,15 +1,6 @@
 import java.util.Random;
 
 public class Text {
-<<<<<<< HEAD
-=======
-
-    private static int _numberOfFiles = 0;
-    private int _numberOfWords;
-    private int _id;
-    private String _sourceText;
-    private String[] _sourceWords;
->>>>>>> olag-second
 
     private static int numberOfFiles = 0;
     private int id;
