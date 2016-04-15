@@ -6,13 +6,14 @@ import java.util.regex.Pattern;
  * Created by Olka on 2016-04-15.
  */
 public class TextWordsSet {
+
     private Text text;
-    private HashMap<String, Integer> mapOfWordOccurencesInText;
+    private HashMap<String, Integer> mapOfWordOccurrencesInText;
 
     public TextWordsSet(Text text){
         this.text = text;
         text.setTextWordsSet(this);
-        mapOfWordOccurencesInText = new HashMap<String, Integer>();
+        mapOfWordOccurrencesInText = new HashMap<String, Integer>();
         generateWordsSetFromText();
     }
 
@@ -23,16 +24,16 @@ public class TextWordsSet {
 
         while ( m.find() ) {
             String word = input.substring(m.start(), m.end());
-            if(mapOfWordOccurencesInText.containsKey(word)){
-                mapOfWordOccurencesInText.put(word, mapOfWordOccurencesInText.get(word)+1);
+            if(mapOfWordOccurrencesInText.containsKey(word)){
+                mapOfWordOccurrencesInText.put(word, mapOfWordOccurrencesInText.get(word)+1);
             }
             else{
-                mapOfWordOccurencesInText.put(word, 1);
+                mapOfWordOccurrencesInText.put(word, 1);
             }
         }
     }
 
-    public HashMap<String, Integer> getMapOfWordOccurencesInText() {
-        return mapOfWordOccurencesInText;
+    public HashMap<String, Integer> getMapOfWordOccurrencesInText() {
+        return mapOfWordOccurrencesInText;
     }
 }
