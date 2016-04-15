@@ -13,6 +13,14 @@ public class Text {
         sourceText = concatenateWords(generateRandomWords(500));
     }
 
+    public void setTextWordsSet(TextWordsSet textWordsSet) {
+        this.textWordsSet = textWordsSet;
+    }
+
+    public String getSourceText() {
+        return sourceText;
+    }
+
     private static String[] generateRandomWords(int numberOfWords) {
         String[] randomStrings = new String[numberOfWords];
         Random random = new Random();
