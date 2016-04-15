@@ -1,38 +1,38 @@
 import java.util.Random;
 
 public class Text {
-    private static int _numberOfFiles = 0;
-    private int _numberOfWords;
-    private int _id;
-    private String _sourceText;
-    private String[] _sourceWords;
+    private static int numberOfFiles = 0;
+    private int numberOfWords;
+    private int id;
+    private String sourceText;
+    private String[] sourceWords;
 
-    public static int get_numberOfFiles() {
-        return _numberOfFiles;
+    public static int getNumberOfFiles() {
+        return numberOfFiles;
     }
 
-    public int get_numberOfWords() {
-        return _numberOfWords;
+    public int getNumberOfWords() {
+        return numberOfWords;
     }
 
-    public int get_id() {
-        return _id;
+    public int getId() {
+        return id;
     }
 
-    public String get_sourceText() {
-        return _sourceText;
+    public String getSourceText() {
+        return sourceText;
     }
 
-    public String[] get_sourceWords() {
-        return _sourceWords;
+    public String[] getSourceWords() {
+        return sourceWords;
     }
 
     public Text(){
-        _id = _numberOfFiles;
-        _numberOfFiles++;
-        _sourceWords = generateRandomWords(500);
-        _sourceText = concatenateWords(_sourceWords);
-        _numberOfWords = _sourceWords.length;
+        id = numberOfFiles;
+        numberOfFiles++;
+        sourceWords = generateRandomWords(500);
+        sourceText = concatenateWords(sourceWords);
+        numberOfWords = sourceWords.length;
     }
 
     private static String[] generateRandomWords(int numberOfWords)
