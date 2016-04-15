@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Text {
+
     private static int _numberOfFiles = 0;
     private int _numberOfWords;
     private int _id;
