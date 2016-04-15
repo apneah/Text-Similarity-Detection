@@ -2,17 +2,21 @@ import java.util.Random;
 
 public class Text {
     private static int numberOfFiles = 0;
-    private int numberOfWords;
     private int id;
     private String sourceText;
-    private String[] sourceWords;
+    private TextWordsSet textWordsSet;
 
-    public static int getNumberOfFiles() {
-        return numberOfFiles;
+    public TextWordsSet getTextWordsSet() {
+        return textWordsSet;
     }
 
-    public int getNumberOfWords() {
-        return numberOfWords;
+    public void setTextWordsSet(TextWordsSet textWordsSet) {
+        this.textWordsSet = textWordsSet;
+    }
+
+    public static int getNumberOfFiles() {
+
+        return numberOfFiles;
     }
 
     public int getId() {
@@ -23,16 +27,10 @@ public class Text {
         return sourceText;
     }
 
-    public String[] getSourceWords() {
-        return sourceWords;
-    }
-
     public Text(){
         id = numberOfFiles;
         numberOfFiles++;
-        sourceWords = generateRandomWords(500);
-        sourceText = concatenateWords(sourceWords);
-        numberOfWords = sourceWords.length;
+        sourceText = concatenateWords(generateRandomWords(500));
     }
 
     private static String[] generateRandomWords(int numberOfWords)
