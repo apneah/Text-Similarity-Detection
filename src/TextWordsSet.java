@@ -9,12 +9,18 @@ public class TextWordsSet {
 
     private Text text;
     private HashMap<String, Integer> mapOfWordOccurrencesInText;
+    private int numberOfWords;
 
     public TextWordsSet(Text text){
         this.text = text;
+        this.numberOfWords = 0;
         text.setTextWordsSet(this);
         mapOfWordOccurrencesInText = new HashMap<String, Integer>();
         generateWordsSetFromText();
+    }
+
+    public int getNumberOfWords() {
+        return numberOfWords;
     }
 
     private void generateWordsSetFromText(){
@@ -30,6 +36,7 @@ public class TextWordsSet {
             else{
                 mapOfWordOccurrencesInText.put(word, 1);
             }
+            numberOfWords += 1;
         }
     }
 

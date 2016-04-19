@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class ComparisonsRunner {
 
     private Text text1;
@@ -9,11 +11,15 @@ public class ComparisonsRunner {
     }
 
     public OverallSimilarityRate runAllComparisons() {
-        OverallSimilarityRate similarityRate = similarityRate = new OverallSimilarityRate(text1, text2);
-        similarityRate.addSingleRate(0.0);  // tutaj w nawiasie wywolanie naszej super metody porownywania
-        similarityRate.addSingleRate(0.0); // druga metoda, trzecia itd.
 
-        // ...
+        OverallSimilarityRate similarityRate = new OverallSimilarityRate(text1, text2);
+        MethodFactory methodFactory = new MethodFactory(text1, text2);
+        List<Method> setOfMethods = methodFactory.provideMethods();
+
+        for(Method method : setOfMethods){
+            similarityRate.addSingleRate(method.compare());
+        }
+
         return similarityRate;
     }
 }

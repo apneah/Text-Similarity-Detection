@@ -7,10 +7,19 @@ public class Text {
     private String sourceText;
     private TextWordsSet textWordsSet;
 
+
+    public TextWordsSet getTextWordsSet() {
+        if(textWordsSet == null){
+            textWordsSet = new TextWordsSet(this);
+        }
+        return textWordsSet;
+    }
+
     public Text(){
         id = numberOfFiles;
         numberOfFiles++;
         sourceText = concatenateWords(generateRandomWords(500));
+        textWordsSet = null;
     }
 
     public void setTextWordsSet(TextWordsSet textWordsSet) {

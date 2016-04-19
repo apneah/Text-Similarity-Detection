@@ -1,0 +1,48 @@
+import java.util.HashMap;
+
+/**
+ * Created by Olka on 2016-04-19.
+ */
+public class CommonWordsMethod extends Method {
+
+    public CommonWordsMethod(Text text1, Text text2) {
+        super(text1, text2);
+    }
+
+    @Override
+    public double compare() {
+        return commonWordsAlgorithm();
+    }
+
+    private double commonWordsAlgorithm(){
+        HashMap<String, Integer> mapOfWordsText1;
+        HashMap<String, Integer> mapOfWordsText2;
+        int numOfWords1 = super.getText1().getTextWordsSet().getNumberOfWords();
+        int numOfWords2 = super.getText2().getTextWordsSet().getNumberOfWords();
+
+        int numOfSameWords = 0;
+
+        //mapOfWordsText1 is a map of the shortest text!!!!!!!!!!!!!!!!
+        if(numOfWords1 < numOfWords2){
+            mapOfWordsText1 = super.getText1().getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText2 = super.getText2().getTextWordsSet().getMapOfWordOccurrencesInText();
+        }
+        else{
+            int temp = numOfWords1;
+            numOfWords1 = numOfWords2;
+            numOfWords2 = temp;
+            mapOfWordsText1 = super.getText2().getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText2 = super.getText1().getTextWordsSet().getMapOfWordOccurrencesInText();
+        }
+
+        for(String word : mapOfWordsText1.keySet()){
+            if(mapOfWordsText2.containsKey(word)){
+                numOfSameWords += Math.min(mapOfWordsText1.get(word), mapOfWordsText2.get(word));
+            }
+        }
+
+        return numOfSameWords/numOfWords1;
+    }
+
+
+}
