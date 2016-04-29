@@ -17,11 +17,16 @@ public class Text {
         return textWordsSet;
     }
 
+
     public Text(){
         id = numberOfFiles;
         numberOfFiles++;
-        sourceText = concatenateWords(generateRandomWords(500));
+        sourceText = concatenateWords(generateRandomWords(20));
         textWordsSet = null;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setTextWordsSet(TextWordsSet textWordsSet) {
@@ -37,11 +42,12 @@ public class Text {
         Random random = new Random();
         for(int i = 0; i < numberOfWords; i++)
         {
-            char[] word = new char[random.nextInt(8)+3]; // words of length 3 through 10. (1 and 2 letter words are boring.)
+            char[] word = new char[3]; // words of length 3 through 10. (1 and 2 letter words are boring.)
             for(int j = 0; j < word.length; j++)
             {
-                word[j] = (char)('a' + random.nextInt(26));
+                word[j] = (char)('a' + random.nextInt(4));
             }
+
             randomStrings[i] = new String(word);
         }
         return randomStrings;

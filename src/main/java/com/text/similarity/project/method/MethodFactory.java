@@ -18,7 +18,7 @@ public class MethodFactory {
     public List<Method> provideMethods() {
         List<Method> methodList = new ArrayList<Method>();
 
-        methodList.add(new LCSMethod(text1, text2));
+        //methodList.add(new LCSMethod(text1, text2));
         methodList.add(new CommonWordsMethod(text1, text2));
 
         return methodList;

@@ -14,7 +14,7 @@ public class TextDatabase {
         }
     }
 
-    public List getAllTexts(){
+    public List<Text> getAllTexts(){
         return allTexts;
     }
 

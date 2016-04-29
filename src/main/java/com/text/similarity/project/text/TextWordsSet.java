@@ -30,6 +30,7 @@ public class TextWordsSet {
 
         while ( m.find() ) {
             String word = input.substring(m.start(), m.end());
+            //System.out.print(word + "' ");
             if(mapOfWordOccurrencesInText.containsKey(word)){
                 mapOfWordOccurrencesInText.put(word, mapOfWordOccurrencesInText.get(word)+1);
             }
