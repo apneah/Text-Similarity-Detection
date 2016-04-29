@@ -1,4 +1,4 @@
-package com.text.similarity.project.comparsion;
+package com.text.similarity.project.comparison;
 
 import com.text.similarity.project.method.Method;
 import com.text.similarity.project.method.MethodFactory;
