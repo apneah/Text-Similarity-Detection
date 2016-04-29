@@ -1,8 +1,10 @@
+package com.text.similarity.project.method;
+
+import com.text.similarity.project.text.Text;
+
 import java.util.HashMap;
 
-/**
- * Created by Olka on 2016-04-19.
- */
+
 public class CommonWordsMethod extends Method {
 
     public CommonWordsMethod(Text text1, Text text2) {

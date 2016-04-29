@@ -1,6 +1,8 @@
-/**
- * Created by Olka on 2016-04-19.
- */
+package com.text.similarity.project.method;
+
+import com.text.similarity.project.text.Text;
+
+
 public class LCSMethod extends Method{
 
     public LCSMethod(Text text1, Text text2) {

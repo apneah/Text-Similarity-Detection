@@ -1,9 +1,10 @@
+package com.text.similarity.project.method;
+
+import com.text.similarity.project.text.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Olka on 2016-04-19.
- */
 public class MethodFactory {
 
     private Text text1;

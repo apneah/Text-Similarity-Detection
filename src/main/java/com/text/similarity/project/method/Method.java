@@ -1,6 +1,8 @@
-/**
- * Created by Olka on 2016-04-19.
- */
+package com.text.similarity.project.method;
+
+import com.text.similarity.project.text.Text;
+
+
 public abstract class Method {
 
     private Text text1;
@@ -19,5 +21,6 @@ public abstract class Method {
     public Text getText2() {
         return text2;
     }
-//double compareTexts
+
+    //double compareTexts
 }

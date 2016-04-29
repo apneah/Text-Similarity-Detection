@@ -1,3 +1,9 @@
+package com.text.similarity.project.comparsion;
+
+import com.text.similarity.project.method.Method;
+import com.text.similarity.project.method.MethodFactory;
+import com.text.similarity.project.text.Text;
+
 import java.util.List;
 
 public class ComparisonsRunner {

@@ -1,3 +1,5 @@
+package com.text.similarity.project.text;
+
 import java.util.Random;
 
 public class Text {

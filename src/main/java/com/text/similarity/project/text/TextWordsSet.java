@@ -1,10 +1,10 @@
+package com.text.similarity.project.text;
+
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Olka on 2016-04-15.
- */
+
 public class TextWordsSet {
 
     private Text text;

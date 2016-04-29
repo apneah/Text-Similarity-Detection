@@ -1,3 +1,7 @@
+package com.text.similarity.project.comparsion;
+
+import com.text.similarity.project.text.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
