@@ -25,4 +25,19 @@ public class Comparator {
         }
     }
 
+
+    public List<OverallSimilarityRate> getResults() {
+        return results;
+    }
+
+    public String getResult(){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for(OverallSimilarityRate result : results) {
+            stringBuilder.append(result.getSingleRate());
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
 }

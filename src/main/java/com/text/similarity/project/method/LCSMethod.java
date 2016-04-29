@@ -15,6 +15,7 @@ public class LCSMethod extends Method{
     }
 
     private double LCSAlgorithm(){
-        return 0.0;
+        System.out.println("LCS not working yet");
+        return 0.5;
     }
 }
