@@ -1,4 +1,4 @@
-package com.text.similarity.project.comparsion;
+package com.text.similarity.project.comparison;
 
 import com.text.similarity.project.text.Text;
 
@@ -15,6 +15,8 @@ public class Comparator {
         this.allTexts = allTexts;
         this.listSize = allTexts.size();
     }
+
+
 
     public void compareAllTexts() {
         for (int i = 0; i < allTexts.size() - 1; i++) {
@@ -34,7 +36,7 @@ public class Comparator {
         StringBuilder stringBuilder = new StringBuilder();
 
         for(OverallSimilarityRate result : results) {
-            stringBuilder.append(result.getSingleRate());
+            stringBuilder.append(result.getRate());
             stringBuilder.append("\n");
         }
         return stringBuilder.toString();

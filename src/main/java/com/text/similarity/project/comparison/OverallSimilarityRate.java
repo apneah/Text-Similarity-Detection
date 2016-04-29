@@ -1,16 +1,25 @@
-package com.text.similarity.project.comparsion;
+package com.text.similarity.project.comparison;
 
 import com.text.similarity.project.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OverallSimilarityRate  {
+public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
 
     private List<Double> similarityRateFromAllMethods;
     private Text text1;
     private Text text2;
     private double overallSimilarityRate;
+
+    public int getText1Id(){
+        return text1.getId();
+    }
+
+
+    public int getText2Id(){
+        return text2.getId();
+    }
 
     public OverallSimilarityRate(Text text1, Text text2) {
         this.text1 = text1;
@@ -38,7 +47,7 @@ public class OverallSimilarityRate  {
         similarityRateFromAllMethods.add(rate);
     }
 
-    public String getSingleRate(){
+    public String getRate(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(text1.getId());
         stringBuilder.append(" : ");
@@ -47,5 +56,10 @@ public class OverallSimilarityRate  {
         stringBuilder.append(computeSimilarityRate());
 
         return stringBuilder.toString();
+    }
+
+    @Override
+    public int compareTo(OverallSimilarityRate o) {
+        return -((Double) overallSimilarityRate).compareTo(o.computeSimilarityRate());
     }
 }
