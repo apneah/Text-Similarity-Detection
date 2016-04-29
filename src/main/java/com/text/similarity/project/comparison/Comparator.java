@@ -1,4 +1,4 @@
-package com.text.similarity.project.comparsion;
+package com.text.similarity.project.comparison;
 
 import com.text.similarity.project.text.Text;
 
@@ -9,11 +9,12 @@ public class Comparator {
 
     private List<Text> allTexts;
     private int listSize;
-    private List<OverallSimilarityRate> results = new ArrayList <OverallSimilarityRate>();
+    private List<OverallSimilarityRate> results;
 
     public Comparator(List<Text> allTexts) {
         this.allTexts = allTexts;
         this.listSize = allTexts.size();
+        results = new ArrayList <OverallSimilarityRate>();
     }
 
     public void compareAllTexts() {
