@@ -19,7 +19,9 @@ public class MethodFactory {
         List<Method> methodList = new ArrayList<Method>();
 
         //methodList.add(new LCSMethod(text1, text2));
-        methodList.add(new CommonWordsMethod(text1, text2));
+        //methodList.add(new CommonWordsMethod(text1, text2));
+        methodList.add(new CosineSimilarityMethod(text1, text2));
+
 
         return methodList;
     }
