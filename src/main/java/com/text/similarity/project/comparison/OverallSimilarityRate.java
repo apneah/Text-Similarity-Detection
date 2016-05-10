@@ -30,7 +30,6 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
     }
 
     // simple implementation, returns average rate
-
     public double computeSimilarityRate() {
         if(overallSimilarityRate < 0) {
 
@@ -48,14 +47,7 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
     }
 
     public String getRate(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(text1.getId());
-        stringBuilder.append(" : ");
-        stringBuilder.append(text2.getId());
-        stringBuilder.append(" similarity Rate = ");
-        stringBuilder.append(computeSimilarityRate());
-
-        return stringBuilder.toString();
+        return String.valueOf(text1.getId()) + " : " + text2.getId() + " similarity rate = " + computeSimilarityRate();
     }
 
     @Override

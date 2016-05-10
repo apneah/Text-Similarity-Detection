@@ -25,7 +25,6 @@ public class Comparator {
         }
     }
 
-
     public List<OverallSimilarityRate> getResults() {
         return results;
     }

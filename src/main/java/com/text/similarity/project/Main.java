@@ -9,12 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int numberOfTexts = 10;
-
-        TextDatabase textDatabase = new TextDatabase(numberOfTexts);
+        TextDatabase textDatabase;
+        // int numberOfTextsToGenerate = 10;
+        // textDatabase = new TextDatabase(numberOfTextsToGenerate);
+        textDatabase = new TextDatabase();
 
         for(Text t : textDatabase.getAllTexts()){
-            System.out.println(t.getSourceText());
+            System.out.println(t.getId() + ": " + t.getSourceText());
         }
         Comparator comparator = new Comparator(textDatabase.getAllTexts());
         comparator.compareAllTexts();
