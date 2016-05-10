@@ -15,6 +15,7 @@ public class CosineSimilarityMethod extends Method{
     public double compare() {
         return cosineSimilarityAlgorithm();
     }
+
     public double cosineSimilarityAlgorithm() {
         //Get vectors
         Map<String, Integer> a = getText1().getTextWordsSet().getMapOfWordOccurrencesInText();

@@ -9,14 +9,12 @@ public class Comparator {
 
     private List<Text> allTexts;
     private int listSize;
-    private List<OverallSimilarityRate> results = new ArrayList <OverallSimilarityRate>();
+    private List<OverallSimilarityRate> results = new ArrayList<>();
 
     public Comparator(List<Text> allTexts) {
         this.allTexts = allTexts;
         this.listSize = allTexts.size();
     }
-
-
 
     public void compareAllTexts() {
         for (int i = 0; i < allTexts.size() - 1; i++) {

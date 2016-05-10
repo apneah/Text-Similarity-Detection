@@ -13,13 +13,13 @@ public class SourceFinder {
 
     public SourceFinder(List<OverallSimilarityRate> originalResults){
         this.originalResults = originalResults;
-        this.resultsIds = new HashSet<Integer>();
+        this.resultsIds = new HashSet<>();
         this.processedResults = processSimilarityRates();
         this.possibleSourceList = getPossibleSources();
     }
 
     private List<OverallSimilarityRate> processSimilarityRates (){
-        List<OverallSimilarityRate> list = new ArrayList<OverallSimilarityRate>();
+        List<OverallSimilarityRate> list = new ArrayList<>();
         for(OverallSimilarityRate result : originalResults){
             if(result.computeSimilarityRate() > 0.2){
                 list.add(result);
@@ -36,7 +36,7 @@ public class SourceFinder {
     }
 
     public List<OverallSimilarityRate> resultsWithId(int id){
-        List<OverallSimilarityRate> result = new ArrayList<OverallSimilarityRate>();
+        List<OverallSimilarityRate> result = new ArrayList<>();
         for(OverallSimilarityRate o : processedResults){
             if(o.getText1Id() == id || o.getText2Id() == id){
                 result.add(o);
@@ -56,7 +56,7 @@ public class SourceFinder {
     }
 
     public List<PossibleSource> getPossibleSources(){
-        List<PossibleSource> possibleSourceList = new ArrayList<PossibleSource>();
+        List<PossibleSource> possibleSourceList = new ArrayList<>();
         for(Integer id : resultsIds){
 
             PossibleSource possibleSource = new PossibleSource(id);
@@ -79,12 +79,10 @@ public class SourceFinder {
     }
 
     public String getFistOnTheList(){
+
+        if(possibleSourceList.isEmpty()) return "No possible sources detected";
         PossibleSource possibleSource = possibleSourceList.get(0);
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(possibleSource.getId());
-        stringBuilder.append(" possibly is a source text for: ");
-        stringBuilder.append(possibleSource.getListToString());
-        return stringBuilder.toString();
+        return String.valueOf(possibleSource.getId()) + " possibly is a source text for: " + possibleSource.getListToString();
     }
 }
