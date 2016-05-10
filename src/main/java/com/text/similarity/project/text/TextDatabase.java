@@ -9,7 +9,7 @@ public class TextDatabase {
 
     public TextDatabase(int n){
         allTexts = new ArrayList<Text>();
-        for(int i=0; i< n; i++){
+        for(int i = 0; i < n; i++){
             allTexts.add(new Text());
         }
     }

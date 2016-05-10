@@ -8,9 +8,10 @@ import com.text.similarity.project.text.TextDatabase;
 public class Main {
 
     public static void main(String[] args) {
-        int num = 4;
 
-        TextDatabase textDatabase = new TextDatabase(num);
+        int numberOfTexts = 10;
+
+        TextDatabase textDatabase = new TextDatabase(numberOfTexts);
 
         for(Text t : textDatabase.getAllTexts()){
             System.out.println(t.getSourceText());

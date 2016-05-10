@@ -1,7 +1,5 @@
 package com.text.similarity.project.text;
 
-import java.util.Random;
-
 public class Text {
 
     private static int numberOfFiles = 0;
@@ -13,7 +11,8 @@ public class Text {
         id = numberOfFiles;
         numberOfFiles++;
         textWordsSet = null;
-        sourceText = (new TextGenerator(10).getSourceText());    // arg for TextGenerator = how many words in text
+        //texts generated:
+        sourceText = (new TextGenerator(20).getSourceText());    // arg for TextGenerator = how many words in text
     }
 
     public TextWordsSet getTextWordsSet() {
@@ -34,7 +33,5 @@ public class Text {
     public String getSourceText() {
         return sourceText;
     }
-
-
 
 }

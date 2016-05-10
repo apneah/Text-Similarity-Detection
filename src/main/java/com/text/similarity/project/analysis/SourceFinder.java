@@ -19,6 +19,7 @@ public class SourceFinder {
     }
 
     private List<OverallSimilarityRate> processSimilarityRates (){
+
         List<OverallSimilarityRate> list = new ArrayList<>();
         for(OverallSimilarityRate result : originalResults){
             if(result.computeSimilarityRate() > 0.2){
@@ -80,7 +81,7 @@ public class SourceFinder {
 
     public String getFistOnTheList(){
 
-        if(possibleSourceList.isEmpty()) return "No possible sources detected";
+        if(possibleSourceList.isEmpty()) return "no possible sources detected";
         PossibleSource possibleSource = possibleSourceList.get(0);
 
         return String.valueOf(possibleSource.getId()) + " possibly is a source text for: " + possibleSource.getListToString();
