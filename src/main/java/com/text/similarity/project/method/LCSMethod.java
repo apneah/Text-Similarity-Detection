@@ -5,12 +5,15 @@ import com.text.similarity.project.text.Text;
 
 public class LCSMethod extends Method{
 
-    public LCSMethod(Text text1, Text text2) {
-        super(text1, text2);
-    }
+    private Text text1;
+    private Text text2;
+
+    public LCSMethod() {}
 
     @Override
-    public double compare() {
+    public double compare(Text text1, Text text2) {
+        this.text1 = text1;
+        this.text2 = text2;
         return LCSAlgorithm();
     }
 

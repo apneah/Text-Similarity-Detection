@@ -10,22 +10,22 @@ public class ComparisonsRunner {
 
     private Text text1;
     private Text text2;
+    static private List<Method> listOfMethods;
 
-    public ComparisonsRunner(Text text1, Text text2) {
+    public ComparisonsRunner(Text text1, Text text2, List<Method> listOfMethods) {
         this.text1 = text1;
         this.text2 = text2;
+        this.listOfMethods = listOfMethods;
     }
 
     public OverallSimilarityRate runAllComparisons() {
 
         OverallSimilarityRate similarityRate = new OverallSimilarityRate(text1, text2);
-        MethodFactory methodFactory = new MethodFactory(text1, text2);
-        List<Method> setOfMethods = methodFactory.provideMethods();
 
-        for(Method method : setOfMethods){
-            similarityRate.addSingleRate(method.compare());
+        if(listOfMethods.isEmpty()) return null;
+        for(Method method : listOfMethods){
+            similarityRate.addSingleRate(method.compare(text1, text2));
         }
-
         return similarityRate;
     }
 }

@@ -7,12 +7,15 @@ import java.util.Map;
 
 public class CosineSimilarityMethod extends Method{
 
-    public CosineSimilarityMethod(Text text1, Text text2) {
-        super(text1, text2);
-    }
+    private Text text1;
+    private Text text2;
+
+    public CosineSimilarityMethod() {}
 
     @Override
-    public double compare() {
+    public double compare(Text text1, Text text2) {
+        this.text1 = text1;
+        this.text2 = text2;
         return cosineSimilarityAlgorithm();
     }
 

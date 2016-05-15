@@ -7,34 +7,38 @@ import java.util.HashMap;
 
 public class CommonWordsMethod extends Method {
 
-    public CommonWordsMethod(Text text1, Text text2) {
-        super(text1, text2);
-    }
+    private Text text1;
+    private Text text2;
+
+    public CommonWordsMethod() { }
 
     @Override
-    public double compare() {
+    public double compare(Text text1, Text text2) {
+        this.text1 = text1;
+        this.text2 = text2;
         return commonWordsAlgorithm();
     }
 
     private double commonWordsAlgorithm(){
-        HashMap<String, Integer> mapOfWordsText1;
-        HashMap<String, Integer> mapOfWordsText2;
-        int numOfWords1 = super.getText1().getTextWordsSet().getNumberOfWords();
-        int numOfWords2 = super.getText2().getTextWordsSet().getNumberOfWords();
+
+        HashMap<String, Integer> mapOfWordsText1 = null;
+        HashMap<String, Integer> mapOfWordsText2 = null;
+        int numOfWords1 = text1.getTextWordsSet().getNumberOfWords();
+        int numOfWords2 = text2.getTextWordsSet().getNumberOfWords();
 
         int numOfSameWords = 0;
 
         //mapOfWordsText1 is a map of the shortest text!!!!!!!!!!!!!!!!
         if(numOfWords1 <= numOfWords2){
-            mapOfWordsText1 = super.getText1().getTextWordsSet().getMapOfWordOccurrencesInText();
-            mapOfWordsText2 = super.getText2().getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText1 = text1.getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText2 = text2.getTextWordsSet().getMapOfWordOccurrencesInText();
         }
         else{
             int temp = numOfWords1;
             numOfWords1 = numOfWords2;
             numOfWords2 = temp;
-            mapOfWordsText1 = super.getText2().getTextWordsSet().getMapOfWordOccurrencesInText();
-            mapOfWordsText2 = super.getText1().getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText1 = text2.getTextWordsSet().getMapOfWordOccurrencesInText();
+            mapOfWordsText2 = text1.getTextWordsSet().getMapOfWordOccurrencesInText();
         }
         //System.out.println();
         for(String word : mapOfWordsText1.keySet()){

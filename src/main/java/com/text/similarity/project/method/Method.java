@@ -8,11 +8,9 @@ public abstract class Method {
     private Text text1;
     private Text text2;
 
-    public Method(Text text1, Text text2){
-        this.text1 = text1;
-        this.text2 = text2;
-    }
-    public abstract double compare();
+    public Method(){}
+
+    public abstract double compare(Text text1, Text text2);
 
     public Text getText1() {
         return text1;
@@ -22,5 +20,4 @@ public abstract class Method {
         return text2;
     }
 
-    //double compareTexts
 }
