@@ -1,10 +1,12 @@
 package com.text.similarity.project;
 
+import com.sun.istack.internal.localization.NullLocalizable;
 import com.text.similarity.project.analysis.SourceFinder;
 import com.text.similarity.project.comparison.Comparator;
 import com.text.similarity.project.text.Text;
 import com.text.similarity.project.text.TextDatabase;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +15,7 @@ import java.io.Writer;
 public class Main {
 
     public static void main(String[] args) {
+
 
         TextDatabase textDatabase;
         // int numberOfTextsToGenerate = 10;
@@ -47,6 +50,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        System.out.println("OK");
     }
 }
