@@ -29,9 +29,9 @@ public class Comparator {
         return results;
     }
 
-    public String getResult(){
+    public String resultsToString(){
         StringBuilder stringBuilder = new StringBuilder();
-
+        if(results.isEmpty()) return "no results";
         for(OverallSimilarityRate result : results) {
             stringBuilder.append(result.getRate());
             stringBuilder.append("\n");

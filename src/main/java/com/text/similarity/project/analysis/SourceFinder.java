@@ -84,6 +84,6 @@ public class SourceFinder {
         if(possibleSourceList.isEmpty()) return "no possible sources detected";
         PossibleSource possibleSource = possibleSourceList.get(0);
 
-        return String.valueOf(possibleSource.getId()) + " possibly is a source text for: " + possibleSource.getListToString();
+        return String.valueOf("\n" + possibleSource.getId()) + " possibly is a source text for: " + possibleSource.getListToString();
     }
 }

@@ -46,8 +46,10 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
         similarityRateFromAllMethods.add(rate);
     }
 
+
     public String getRate(){
-        return String.valueOf(text1.getId()) + " : " + text2.getId() + " similarity rate = " + computeSimilarityRate();
+        return String.valueOf(text1.getId()) + " : " + text2.getId() +
+                " similarity rate = " + String.format("%.4f", computeSimilarityRate());
     }
 
     @Override
