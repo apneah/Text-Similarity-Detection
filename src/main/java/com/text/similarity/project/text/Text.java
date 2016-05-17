@@ -1,11 +1,14 @@
 package com.text.similarity.project.text;
 
+import java.io.File;
+
 public class Text {
 
     private static int numberOfFiles = 1;
     private int id;
     private String sourceText;
     private TextWordsSet textWordsSet;
+    private File file;
 
     public Text(){
         id = numberOfFiles;
@@ -20,6 +23,12 @@ public class Text {
         numberOfFiles++;
         textWordsSet = null;
         this.sourceText = sourceText;
+    }
+
+    public Text(String sourceText, File file){
+        this(sourceText);
+        this.file = file;
+
     }
 
     public TextWordsSet getTextWordsSet() {
@@ -40,5 +49,7 @@ public class Text {
     public String getSourceText() {
         return sourceText;
     }
+
+    public File getFile(){ return file;}
 
 }

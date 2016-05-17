@@ -1,7 +1,6 @@
 package com.text.similarity.project.method;
 
 import com.text.similarity.project.MethodWindow;
-import com.text.similarity.project.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +29,13 @@ public class MethodFactory {
             methodList.add(new CommonWordsMethod());
         }
         if(window.getListOfMethods().contains("LCS")) {
-            methodList.add(new CommonWordsMethod());
+            methodList.add(new LCSMethod());
         }
         if(window.getListOfMethods().contains("Cosine Similarity")) {
-            methodList.add(new CommonWordsMethod());
+            methodList.add(new CosineSimilarityMethod());
+        }
+        if(window.getListOfMethods().contains("LSA")) {
+            methodList.add(new LSAMethod());
         }
 
         return methodList;

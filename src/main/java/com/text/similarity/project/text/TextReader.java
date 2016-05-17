@@ -23,8 +23,7 @@ public class TextReader {
         for(File file : listOfFiles) {
             if(file.isFile() && file.getName().endsWith(".txt")) {
                 String sourceText = readFileSourceText(file);
-                // System.out.println("reading file: " + file.toString());
-                Text text = new Text(sourceText);
+                Text text = new Text(sourceText, file);
                 allTexts.add(text);
             }
         }
