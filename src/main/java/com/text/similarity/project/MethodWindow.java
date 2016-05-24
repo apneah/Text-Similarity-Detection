@@ -1,7 +1,5 @@
 package com.text.similarity.project;
 
-import com.text.similarity.project.method.Method;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +18,8 @@ public class MethodWindow {
         final JRadioButton commonWordsButton = new JRadioButton("Common Words Method");
         final JRadioButton LCSButton = new JRadioButton("LCS Method");
         final JRadioButton cosineButton = new JRadioButton("Cosine Similarity Method");
-        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton};
+        final JRadioButton LSAButton = new JRadioButton("LSA Method");
+        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton, LSAButton};
 
         JOptionPane.showConfirmDialog(null, options, "Choose methods for text comparisons:", JOptionPane.OK_CANCEL_OPTION);
 
@@ -36,6 +35,11 @@ public class MethodWindow {
             listOfMethods.add("Cosine Similarity");
             System.out.println("choosing cosine similarity method");
         }
+        if(LSAButton.isSelected()) {
+            listOfMethods.add("LSA");
+            System.out.println("choosing LSA method");
+        }
+
     }
 
     public List<String> getListOfMethods() {

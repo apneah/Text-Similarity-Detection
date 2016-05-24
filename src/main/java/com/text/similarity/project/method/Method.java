@@ -10,11 +10,6 @@ public abstract class Method {
 
     public Method(){}
 
-    public Method(Text text1, Text text2){
-        this.text1 = text1;
-        this.text2 = text2;
-    }
-
     public abstract double compare(Text text1, Text text2);
 
     public Text getText1() {

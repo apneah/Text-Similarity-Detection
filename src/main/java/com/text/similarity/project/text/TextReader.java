@@ -15,6 +15,7 @@ public class TextReader {
         this.allTexts = new ArrayList<>();
     }
 
+
     public List<Text> createTextDataBase() {
 
         File folder = new File(pathname);
@@ -23,7 +24,7 @@ public class TextReader {
         for(File file : listOfFiles) {
             if(file.isFile() && file.getName().endsWith(".txt")) {
                 String sourceText = readFileSourceText(file);
-                Text text = new Text(sourceText, file);
+                Text text = new Text(sourceText, file, pathname);
                 allTexts.add(text);
             }
         }

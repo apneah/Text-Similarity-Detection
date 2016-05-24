@@ -4,7 +4,8 @@ import java.util.*;
 
 public class TextDatabase {
 
-    private String pathname = "C:\\Users\\Ola\\Documents\\text-similarity-project\\data";
+    //private String pathname = "C:\\Users\\Ola\\Documents\\text-similarity-project\\data"; // olaG
+    private String pathname = "C:\\Users\\Olka\\Documents\\GitHub\\text-similarity-project\\data"; // OlaB
     private List<Text> allTexts;
 
     // for reading all txt files from given folder

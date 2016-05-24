@@ -14,12 +14,14 @@ public class LCSMethod extends Method{
     public double compare(Text text1, Text text2) {
         this.text1 = text1;
         this.text2 = text2;
+
         return LCSAlgorithm();
     }
 
     private double LCSAlgorithm(){
-        String sequence1 = this.getText1().getSourceText();
-        String sequence2 = this.getText2().getSourceText();
+
+        String sequence1 = text1.getSourceText();
+        String sequence2 = text2.getSourceText();
 
         int[][] LCS = new int[sequence1.length() + 1][sequence2.length() + 1];
         String[][] solution = new String[sequence1.length() + 1][sequence2.length() + 1];

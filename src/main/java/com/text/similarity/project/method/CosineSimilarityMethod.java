@@ -21,8 +21,8 @@ public class CosineSimilarityMethod extends Method{
 
     public double cosineSimilarityAlgorithm() {
         //Get vectors
-        Map<String, Integer> a = getText1().getTextWordsSet().getMapOfWordOccurrencesInText();
-        Map<String, Integer> b = getText2().getTextWordsSet().getMapOfWordOccurrencesInText();
+        Map<String, Integer> a = text1.getTextWordsSet().getMapOfWordOccurrencesInText();
+        Map<String, Integer> b = text2.getTextWordsSet().getMapOfWordOccurrencesInText();
 
         //Get unique words from both sequences
         HashSet<String> intersection = new HashSet<>(a.keySet());

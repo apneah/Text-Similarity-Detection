@@ -5,6 +5,7 @@ import java.io.File;
 public class Text {
 
     private static int numberOfFiles = 1;
+    private String pathname;
     private int id;
     private String sourceText;
     private TextWordsSet textWordsSet;
@@ -22,12 +23,17 @@ public class Text {
         id = numberOfFiles;
         numberOfFiles++;
         textWordsSet = null;
-        this.sourceText = sourceText;
+        this.sourceText = sourceText.toLowerCase();
     }
 
     public Text(String sourceText, File file){
         this(sourceText);
         this.file = file;
+
+    }
+    public Text(String sourceText, File file, String pathname){
+        this(sourceText, file);
+        this.pathname = pathname;
 
     }
 
@@ -51,5 +57,7 @@ public class Text {
     }
 
     public File getFile(){ return file;}
+
+    public String getPathname() {return pathname;}
 
 }
