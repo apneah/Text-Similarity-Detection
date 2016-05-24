@@ -20,7 +20,8 @@ public class MethodWindow {
         final JRadioButton commonWordsButton = new JRadioButton("Common Words Method");
         final JRadioButton LCSButton = new JRadioButton("LCS Method");
         final JRadioButton cosineButton = new JRadioButton("Cosine Similarity Method");
-        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton};
+        final JRadioButton levenshteinButton = new JRadioButton("Levenshtein Method");
+        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton, levenshteinButton};
 
         JOptionPane.showConfirmDialog(null, options, "Choose methods for text comparisons:", JOptionPane.OK_CANCEL_OPTION);
 
@@ -35,6 +36,10 @@ public class MethodWindow {
         if(cosineButton.isSelected()) {
             listOfMethods.add("Cosine Similarity");
             System.out.println("choosing cosine similarity method");
+        }
+        if(levenshteinButton.isSelected()) {
+            listOfMethods.add("Levenshtein Method");
+            System.out.println("choosing Levenshtein method");
         }
     }
 

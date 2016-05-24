@@ -11,8 +11,7 @@ public class CommonWordsMethod extends Method {
     private Text text2;
     private double methodIndicator = 1.0;
 
-    public CommonWordsMethod() {
-    }
+    public CommonWordsMethod() {}
 
     @Override
     public double compare(Text text1, Text text2) {
