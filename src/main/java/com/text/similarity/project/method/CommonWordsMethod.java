@@ -9,8 +9,10 @@ public class CommonWordsMethod extends Method {
 
     private Text text1;
     private Text text2;
+    private double methodIndicator = 1.0;
 
-    public CommonWordsMethod() { }
+    public CommonWordsMethod() {
+    }
 
     @Override
     public double compare(Text text1, Text text2) {
@@ -19,21 +21,20 @@ public class CommonWordsMethod extends Method {
         return commonWordsAlgorithm();
     }
 
-    private double commonWordsAlgorithm(){
+    private double commonWordsAlgorithm() {
 
-        HashMap<String, Integer> mapOfWordsText1 = null;
-        HashMap<String, Integer> mapOfWordsText2 = null;
+        HashMap<String, Integer> mapOfWordsText1;
+        HashMap<String, Integer> mapOfWordsText2;
         int numOfWords1 = text1.getTextWordsSet().getNumberOfWords();
         int numOfWords2 = text2.getTextWordsSet().getNumberOfWords();
 
         int numOfSameWords = 0;
 
         //mapOfWordsText1 is a map of the shortest text!!!!!!!!!!!!!!!!
-        if(numOfWords1 <= numOfWords2){
+        if (numOfWords1 <= numOfWords2) {
             mapOfWordsText1 = text1.getTextWordsSet().getMapOfWordOccurrencesInText();
             mapOfWordsText2 = text2.getTextWordsSet().getMapOfWordOccurrencesInText();
-        }
-        else{
+        } else {
             int temp = numOfWords1;
             numOfWords1 = numOfWords2;
             numOfWords2 = temp;
@@ -41,15 +42,20 @@ public class CommonWordsMethod extends Method {
             mapOfWordsText2 = text1.getTextWordsSet().getMapOfWordOccurrencesInText();
         }
         //System.out.println();
-        for(String word : mapOfWordsText1.keySet()){
+        for (String word : mapOfWordsText1.keySet()) {
 
-            if(mapOfWordsText2.containsKey(word)){
+            if (mapOfWordsText2.containsKey(word)) {
 
                 numOfSameWords += Math.min(mapOfWordsText1.get(word), mapOfWordsText2.get(word));
-                //System.out.println(word + " " + Math.min(mapOfWordsText1.get(word), mapOfWordsText2.get(word)));
+                // System.out.println(word + " " + Math.min(mapOfWordsText1.get(word), mapOfWordsText2.get(word)));
             }
         }
-        //System.out.println(numOfSameWords + " " + numOfSameWords/(double)numOfWords1);
-        return numOfSameWords/(double)numOfWords1;
+        // System.out.println(numOfSameWords + " " + numOfSameWords/(double)numOfWords1 + " 1: " + numOfWords1 + " 2: " + numOfWords2);
+        return numOfSameWords / (double) numOfWords1;
+    }
+
+    @Override
+    public double getMethodIndicator() {
+        return methodIndicator;
     }
 }

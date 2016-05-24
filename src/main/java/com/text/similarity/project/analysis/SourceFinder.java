@@ -7,8 +7,9 @@ import java.util.*;
 public class SourceFinder {
     private List<OverallSimilarityRate> originalResults;
     private List<OverallSimilarityRate> processedResults;
-    private Set<Integer> resultsIds;
+    private Set<String> resultsIds;
     private List<PossibleSource> possibleSourceList;
+    private static double minimumRate = 0.65;
 
 
     public SourceFinder(List<OverallSimilarityRate> originalResults){
@@ -22,13 +23,13 @@ public class SourceFinder {
 
         List<OverallSimilarityRate> list = new ArrayList<>();
         for(OverallSimilarityRate result : originalResults){
-            if(result.computeSimilarityRate() > 0.2){
+            if(result.computeSimilarityRate() > minimumRate){
                 list.add(result);
-                if(!resultsIds.contains(result.getText1Id())){
-                    resultsIds.add(result.getText1Id());
+                if(!resultsIds.contains(result.getText1Name())){
+                    resultsIds.add(result.getText1Name());
                 }
-                if(!resultsIds.contains(result.getText2Id())){
-                    resultsIds.add(result.getText2Id());
+                if(!resultsIds.contains(result.getText2Name())){
+                    resultsIds.add(result.getText2Name());
                 }
             }
         }
@@ -36,10 +37,10 @@ public class SourceFinder {
         return list;
     }
 
-    public List<OverallSimilarityRate> resultsWithId(int id){
+    public List<OverallSimilarityRate> resultsWithId(String textName){
         List<OverallSimilarityRate> result = new ArrayList<>();
         for(OverallSimilarityRate o : processedResults){
-            if(o.getText1Id() == id || o.getText2Id() == id){
+            if(o.getText1Name().equals(textName) || o.getText2Name().equals(textName)){
                 result.add(o);
             }
         }
@@ -58,17 +59,17 @@ public class SourceFinder {
 
     public List<PossibleSource> getPossibleSources(){
         List<PossibleSource> possibleSourceList = new ArrayList<>();
-        for(Integer id : resultsIds){
+        for(String textName : resultsIds){
 
-            PossibleSource possibleSource = new PossibleSource(id);
-            List<OverallSimilarityRate> rates = resultsWithId(id);
+            PossibleSource possibleSource = new PossibleSource(textName);
+            List<OverallSimilarityRate> rates = resultsWithId(textName);
             for(OverallSimilarityRate rate : rates){
-                int anotherId;
-                if(rate.getText1Id() != id){
-                    anotherId = rate.getText1Id();
+                String anotherId;
+                if(!rate.getText1Name().equals(textName)){
+                    anotherId = rate.getText1Name();
                 }
                 else{
-                    anotherId = rate.getText2Id();
+                    anotherId = rate.getText2Name();
                 }
                 possibleSource.add(anotherId, rate.computeSimilarityRate());
             }

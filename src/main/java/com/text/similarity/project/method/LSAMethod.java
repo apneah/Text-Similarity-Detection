@@ -1,5 +1,5 @@
 package com.text.similarity.project.method;
-
+/*
 import com.text.similarity.project.text.Text;
 import edu.ucla.sspace.lsa.LatentSemanticAnalysis;
 import edu.ucla.sspace.vector.VectorIO;
@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class LSAMethod extends Method{
+public class LSAMethod extends Method {
     private Text text1;
     private Text text2;
 
@@ -41,3 +41,4 @@ public class LSAMethod extends Method{
         return 0;
     }
 }
+*/
