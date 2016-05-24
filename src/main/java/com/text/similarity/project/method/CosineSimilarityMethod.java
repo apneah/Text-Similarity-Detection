@@ -28,7 +28,6 @@ public class CosineSimilarityMethod extends Method{
 
         this.text1 = text1;
         this.text2 = text2;
-        System.out.println(this.text1.getId() + " " + this.text2.getId() );
         return cosineSimilarityAlgorithm();
     }
 

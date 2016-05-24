@@ -7,7 +7,7 @@ public class LCSMethod extends Method{
 
     private Text text1;
     private Text text2;
-    private double methodIndicator = 1;
+    private double methodIndicator = 1.0;
 
     public LCSMethod() {}
 
