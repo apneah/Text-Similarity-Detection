@@ -23,8 +23,8 @@ public class ComparisonsRunner {
         OverallSimilarityRate similarityRate = new OverallSimilarityRate(text1, text2);
 
         if(listOfMethods.isEmpty()) return null;
-        for(Method method : listOfMethods){
-            similarityRate.addSingleRate(method.compare(text1, text2));
+        for(Method method : listOfMethods) {
+            similarityRate.addSingleRate(method.compare(text1, text2) * method.getMethodIndicator());
         }
         return similarityRate;
     }

@@ -12,13 +12,12 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
     private Text text2;
     private double overallSimilarityRate;
 
-    public int getText1Id(){
-        return text1.getId();
+    public String getText1Name(){
+        return text1.getFilename();
     }
 
-
-    public int getText2Id(){
-        return text2.getId();
+    public String getText2Name(){
+        return text2.getFilename();
     }
 
     public OverallSimilarityRate(Text text1, Text text2) {
@@ -48,7 +47,7 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
 
 
     public String getRate(){
-        return String.valueOf(text1.getId()) + " : " + text2.getId() +
+        return String.valueOf(text1.getFilename()) + " : " + text2.getFilename() +
                 " similarity rate = " + String.format("%.4f", computeSimilarityRate());
     }
 

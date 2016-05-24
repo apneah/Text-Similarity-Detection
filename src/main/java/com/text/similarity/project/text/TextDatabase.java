@@ -15,7 +15,7 @@ public class TextDatabase {
         System.out.println("all texts: " + allTexts.size());
     }
 
-    // for creating random genareted database
+    // for creating random generated database
     public TextDatabase(int n){
         allTexts = new ArrayList<>();
         for(int i = 0; i < n; i++){

@@ -1,5 +1,7 @@
 package com.text.similarity.project;
 
+import com.text.similarity.project.method.Method;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +20,8 @@ public class MethodWindow {
         final JRadioButton commonWordsButton = new JRadioButton("Common Words Method");
         final JRadioButton LCSButton = new JRadioButton("LCS Method");
         final JRadioButton cosineButton = new JRadioButton("Cosine Similarity Method");
-        final JRadioButton LevenshteinButton = new JRadioButton("Levenshtein Distance Method");
-        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton, LevenshteinButton};
+        final JRadioButton levenshteinButton = new JRadioButton("Levenshtein Method");
+        JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton, levenshteinButton};
 
         JOptionPane.showConfirmDialog(null, options, "Choose methods for text comparisons:", JOptionPane.OK_CANCEL_OPTION);
 
@@ -35,9 +37,9 @@ public class MethodWindow {
             listOfMethods.add("Cosine Similarity");
             System.out.println("choosing cosine similarity method");
         }
-        if(LevenshteinButton.isSelected()) {
-            listOfMethods.add("Levenshtein Similarity");
-            System.out.println("choosing Levenshtein distance method");
+        if(levenshteinButton.isSelected()) {
+            listOfMethods.add("Levenshtein Method");
+            System.out.println("choosing Levenshtein method");
         }
     }
 

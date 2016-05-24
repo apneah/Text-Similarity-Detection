@@ -34,8 +34,9 @@ public class MethodFactory {
         if(window.getListOfMethods().contains("Cosine Similarity")) {
             methodList.add(new CosineSimilarityMethod());
         }
-        if(window.getListOfMethods().contains("Levenshtein")) {
+        if(window.getListOfMethods().contains("Levenshtein Method")) {
             methodList.add(new LevenshteinMethod());
+            //System.out.println("in method factory");
         }
 
         return methodList;

@@ -5,19 +5,19 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
 public class PossibleSource implements Comparable<PossibleSource>{
-    private int id;
-    private List<Integer> textsFromSource;
-    private Map<Integer, Double> textsFromSourceValues;
+    private String id;
+    private List<String> textsFromSource;
+    private Map<String, Double> textsFromSourceValues;
     private double sumOfRates;
 
-    public PossibleSource(int id){
+    public PossibleSource(String id){
         this.id = id;
-        this.textsFromSource = new ArrayList<Integer>();
-        this.textsFromSourceValues = new HashMap<Integer, Double>();
+        this.textsFromSource = new ArrayList<String>();
+        this.textsFromSourceValues = new HashMap<String, Double>();
         this.sumOfRates = 0;
     }
 
-    public void add(int id, double rate){
+    public void add(String id, double rate){
         textsFromSource.add(id);
         textsFromSourceValues.put(id, rate);
         sumOfRates += rate;
@@ -30,10 +30,10 @@ public class PossibleSource implements Comparable<PossibleSource>{
         return textsFromSource.size();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-
+/*
     //TODO
     public void sortMap(){
         Map<Integer, Double> sortedMap =
@@ -45,10 +45,8 @@ public class PossibleSource implements Comparable<PossibleSource>{
         textsFromSourceValues = sortedMap;
         //return sortedMap;
     }
-
-    public static void printMap(Map mp) {
-
-    }
+*/
+    public static void printMap(Map mp) {}
 
     public String getListToString(){
         StringBuilder stringBuilder = new StringBuilder();
