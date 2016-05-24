@@ -8,18 +8,22 @@ public class LevenshteinMethod extends Method{
 
     public LevenshteinMethod() {}
 
+
     @Override
     public double compare(Text text1, Text text2) {
+        System.out.println("here" );
         this.text1 = text1;
         this.text2 = text2;
-        int result =  LevenshteinDistance(text1.getSourceText(), text1.getSourceText().length(), text2.getSourceText(), text2.getSourceText().length());
-        return (double)result/Math.min(text1.getSourceText().length(), text2.getSourceText().length());
+
+        int result =  LevenshteinDistance(this.text1.getSourceText(), this.text1.getSourceText().length(), this.text2.getSourceText(), this.text2.getSourceText().length());
+        double res = (double)result/(double)Math.min(this.text1.getSourceText().length(), this.text2.getSourceText().length());
+        System.out.println(this.text1.getId() + " " + this.text2.getId() + " " + res);
+        return res;
     }
 
 
-    int LevenshteinDistance(String s, int len_s, String t, int len_t) {
+    private int LevenshteinDistance(String s, int len_s, String t, int len_t) {
         int cost;
-
 
   /* base case: empty strings */
         if (len_s == 0) return len_t;

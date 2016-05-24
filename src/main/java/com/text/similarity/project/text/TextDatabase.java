@@ -12,6 +12,7 @@ public class TextDatabase {
     public TextDatabase() {
         TextReader reader = new TextReader(pathname);
         allTexts = reader.createTextDataBase();
+        System.out.println("all texts: " + allTexts.size());
     }
 
     // for creating random genareted database
