@@ -34,8 +34,8 @@ public class MethodFactory {
         if(window.getListOfMethods().contains("Cosine Similarity")) {
             methodList.add(new CosineSimilarityMethod());
         }
-        if(window.getListOfMethods().contains("LSA")) {
-            methodList.add(new LSAMethod());
+        if(window.getListOfMethods().contains("Levenshtein")) {
+            methodList.add(new LevenshteinMethod());
         }
 
         return methodList;
