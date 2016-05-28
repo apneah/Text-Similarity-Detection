@@ -1,12 +1,9 @@
 package com.text.similarity.project;
 
-import com.sun.istack.internal.localization.NullLocalizable;
 import com.text.similarity.project.analysis.SourceFinder;
 import com.text.similarity.project.comparison.Comparator;
-import com.text.similarity.project.text.Text;
 import com.text.similarity.project.text.TextDatabase;
 
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,7 +24,7 @@ public class Main {
         }
 */
         Comparator comparator = new Comparator(textDatabase.getAllTexts());
-        comparator.compareAllTexts();
+        comparator.getTimeAndCompareAllTexts();
 
         // writing results to txt files
         String possibleSources = new SourceFinder(comparator.getResults()).getFistOnTheList();

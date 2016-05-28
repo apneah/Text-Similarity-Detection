@@ -1,7 +1,6 @@
 package com.text.similarity.project.comparison;
 
 import com.text.similarity.project.method.Method;
-import com.text.similarity.project.method.MethodFactory;
 import com.text.similarity.project.text.Text;
 
 import java.util.List;
@@ -10,6 +9,7 @@ public class ComparisonsRunner {
 
     private Text text1;
     private Text text2;
+
     static private List<Method> listOfMethods;
 
     public ComparisonsRunner(Text text1, Text text2, List<Method> listOfMethods) {
@@ -28,4 +28,5 @@ public class ComparisonsRunner {
         }
         return similarityRate;
     }
+
 }
