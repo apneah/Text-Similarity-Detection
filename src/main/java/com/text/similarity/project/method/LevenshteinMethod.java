@@ -6,7 +6,7 @@ public class LevenshteinMethod extends Method {
 
     private Text text1;
     private Text text2;
-    private double methodIndicator = 1.0;
+    private double methodIndicator = 1.2;
 
     public LevenshteinMethod() { }
 
@@ -22,7 +22,6 @@ public class LevenshteinMethod extends Method {
 
     @Override
     public double compare(Text text1, Text text2) {
-        //System.out.println("compare" );
         this.text1 = text1;
         this.text2 = text2;
         return LevenstheinAlgorythm();
