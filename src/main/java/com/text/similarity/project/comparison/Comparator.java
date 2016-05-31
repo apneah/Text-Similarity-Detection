@@ -50,7 +50,7 @@ public class Comparator {
         long startTime = System.currentTimeMillis();
         compareAllTexts();
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.out.println("Estimated Time of running all methods is: " + estimatedTime + " milliseconds");
+        System.out.println("running time of all methods is: " + estimatedTime + " milliseconds");
 
     }
 

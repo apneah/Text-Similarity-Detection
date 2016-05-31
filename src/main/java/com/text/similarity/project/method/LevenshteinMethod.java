@@ -6,7 +6,7 @@ public class LevenshteinMethod extends Method {
 
     private Text text1;
     private Text text2;
-    private double methodIndicator = 1.2;
+    private double methodIndicator = 1;
 
     public LevenshteinMethod() { }
 
