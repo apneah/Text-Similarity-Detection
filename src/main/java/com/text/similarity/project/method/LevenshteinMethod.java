@@ -6,7 +6,7 @@ public class LevenshteinMethod extends Method {
 
     private Text text1;
     private Text text2;
-    private double methodIndicator = 1;
+    private double methodIndicator = 1.2;
 
     public LevenshteinMethod() { }
 
@@ -72,9 +72,7 @@ public class LevenshteinMethod extends Method {
                 }
             }
         }
-
         return dp[len1][len2];
-
     }
 
     @Override

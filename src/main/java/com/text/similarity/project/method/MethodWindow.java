@@ -1,6 +1,4 @@
-package com.text.similarity.project;
-
-import com.text.similarity.project.method.Method;
+package com.text.similarity.project.method;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ public class MethodWindow {
         JComponent[] options = new JComponent[]{commonWordsButton, LCSButton, cosineButton, levenshteinButton};
 
         JOptionPane.showConfirmDialog(null, options, "Choose methods for text comparisons:", JOptionPane.OK_CANCEL_OPTION);
-
         if(commonWordsButton.isSelected()) {
             listOfMethods.add("Common Words");
             System.out.println("choosing common words method");
@@ -44,6 +41,7 @@ public class MethodWindow {
     }
 
     public List<String> getListOfMethods() {
-        return listOfMethods;
-    }
+            return listOfMethods;
+        }
 }
+

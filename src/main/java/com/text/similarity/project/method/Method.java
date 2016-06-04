@@ -2,6 +2,10 @@ package com.text.similarity.project.method;
 
 import com.text.similarity.project.text.Text;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public abstract class Method {
 
@@ -27,5 +31,6 @@ public abstract class Method {
     }
 
     public double getMethodIndicator() {return methodIndicator; }
+
 
 }

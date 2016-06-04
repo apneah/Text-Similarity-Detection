@@ -4,20 +4,19 @@ import com.text.similarity.project.analysis.SourceFinder;
 import com.text.similarity.project.comparison.Comparator;
 import com.text.similarity.project.text.TextDatabase;
 
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-
         TextDatabase textDatabase;
         // int numberOfTextsToGenerate = 10;
-        // textDatabase = new TextDatabase(numberOfTextsToGenerate);
-        textDatabase = new TextDatabase();
+        // textDatabase  new TextDatabase(numberOfTextsToGenerate);
+
+        // here, select your own path to folder with txt files to compare:
+        String pathname = "C:\\Users\\Ola\\Documents\\text-similarity-project\\data";
+        textDatabase = new TextDatabase(pathname);
 /*
         for(Text t : textDatabase.getAllTexts()){
             System.out.println(t.getId() + ": " + t.getSourceText());

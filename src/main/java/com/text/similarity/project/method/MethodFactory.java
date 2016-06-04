@@ -1,26 +1,20 @@
 package com.text.similarity.project.method;
 
-import com.text.similarity.project.MethodWindow;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MethodFactory {
 
-
     private List<Method> methodList;
-
 
     public MethodFactory() {
         methodList = new ArrayList<Method>();
     }
 
-
     public List<Method> getMethodList() {
         if(methodList.isEmpty()) return setMethods();
         else return methodList;
     }
-
 
     public List<Method> setMethods() {
 

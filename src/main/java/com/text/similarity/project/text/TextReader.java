@@ -19,12 +19,14 @@ public class TextReader {
 
         File folder = new File(pathname);
         File[] listOfFiles = folder.listFiles();
-        if(listOfFiles.length == 0) return null;
-        for(File file : listOfFiles) {
-            if(file.isFile() && file.getName().endsWith(".txt")) {
-                String sourceText = readFileSourceText(file);
-                Text text = new Text(sourceText, file.getName().substring(0, file.getName().length() - 4));
-                allTexts.add(text);
+        if(listOfFiles.length == 0) allTexts = null;
+        else {
+            for (File file : listOfFiles) {
+                if (file.isFile() && file.getName().endsWith(".txt")) {
+                    String sourceText = readFileSourceText(file);
+                    Text text = new Text(sourceText, file.getName().substring(0, file.getName().length() - 4));
+                    allTexts.add(text);
+                }
             }
         }
         return allTexts;

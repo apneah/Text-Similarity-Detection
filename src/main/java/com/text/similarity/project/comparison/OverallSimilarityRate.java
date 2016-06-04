@@ -31,9 +31,9 @@ public class OverallSimilarityRate implements Comparable<OverallSimilarityRate>{
     // simple implementation, returns average rate
     public double computeSimilarityRate() {
         if(overallSimilarityRate < 0) {
-
             double result = 0;
             for (double singleRate : similarityRateFromAllMethods) {
+                if(singleRate > 1.0) singleRate = 1.0;
                 result += singleRate;
             }
             overallSimilarityRate = result/similarityRateFromAllMethods.size();
