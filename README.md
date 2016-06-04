@@ -2,7 +2,7 @@
 it's a program created to detect similarity in text files using four comparison methods:<br />
 Common Words, Longest Common Subseguence, Cosine Similarity and Levenshtein Distance
 
-## how to run :
+## how to run:
 1. git clone
 2. cd your-project-path
 3. change pathname variable in main class for absolute pathname to a folder with your txt files (18. line of Main.java class)
