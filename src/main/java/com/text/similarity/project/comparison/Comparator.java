@@ -46,4 +46,12 @@ public class Comparator {
         return stringBuilder.toString();
     }
 
+    public void getTimeAndCompareAllTexts(){
+        long startTime = System.currentTimeMillis();
+        compareAllTexts();
+        long estimatedTime = System.currentTimeMillis() - startTime;
+        System.out.println("running time of all methods is: " + estimatedTime + " milliseconds");
+
+    }
+
 }

@@ -7,8 +7,19 @@ public class LCSMethod extends Method{
 
     private Text text1;
     private Text text2;
+    private double methodIndicator = 1.0;
 
     public LCSMethod() {}
+
+    @Override
+    public Text getText1() {
+        return text1;
+    }
+
+    @Override
+    public Text getText2() {
+        return text2;
+    }
 
     @Override
     public double compare(Text text1, Text text2) {
@@ -23,13 +34,14 @@ public class LCSMethod extends Method{
 
         int[][] LCS = new int[sequence1.length() + 1][sequence2.length() + 1];
         String[][] solution = new String[sequence1.length() + 1][sequence2.length() + 1];
-        // if A is null then LCS of A, B =0
+
+        // if 1 is null then LCS(text1, text2) = 0
         for (int i = 0; i <= sequence2.length(); i++) {
             LCS[0][i] = 0;
             solution[0][i] = "0";
         }
 
-        // if B is null then LCS of A, B =0
+        // if 2 is null then LCS(text1, text2) = 0
         for (int i = 0; i <= sequence1.length(); i++) {
             LCS[i][0] = 0;
             solution[i][0] = "0";
@@ -47,4 +59,8 @@ public class LCSMethod extends Method{
         //this will be the percentage of the length of the longest subsequence out of the shortest of texts
         return (double)LCS[sequence1.length()][sequence2.length()] / Math.min(sequence1.length(), sequence2.length());
     }
+
+    @Override
+    public double getMethodIndicator() { return methodIndicator; }
+
 }

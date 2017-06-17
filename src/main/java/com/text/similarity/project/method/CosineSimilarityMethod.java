@@ -9,6 +9,17 @@ public class CosineSimilarityMethod extends Method{
 
     private Text text1;
     private Text text2;
+    private double methodIndicator = 0.65 / 0.85;
+
+    @Override
+    public Text getText2() {
+        return text2;
+    }
+
+    @Override
+    public Text getText1() {
+        return text1;
+    }
 
     public CosineSimilarityMethod() {}
 
@@ -17,7 +28,6 @@ public class CosineSimilarityMethod extends Method{
 
         this.text1 = text1;
         this.text2 = text2;
-        System.out.println(this.text1.getId() + " " + this.text2.getId() );
         return cosineSimilarityAlgorithm();
     }
 
@@ -50,5 +60,8 @@ public class CosineSimilarityMethod extends Method{
         //return cosine similarity
         return dotProduct / Math.sqrt(magnitudeA * magnitudeB);
     }
+
+    @Override
+    public double getMethodIndicator() { return methodIndicator; }
 
 }
